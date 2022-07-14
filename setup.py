@@ -12,7 +12,7 @@ from shutil import rmtree
 from setuptools import find_packages, setup, Command
 
 # Package meta-data.
-NAME = 'aionefit'
+NAME = 'aionefit_updated'
 DESCRIPTION = 'asyncio library for Bosch thermostats'
 URL = 'https://github.com/spoetnik/aionefit'
 EMAIL = 'm.degeus@nise.nl'
