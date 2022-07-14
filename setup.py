@@ -14,16 +14,16 @@ from setuptools import find_packages, setup, Command
 # Package meta-data.
 NAME = 'aionefit'
 DESCRIPTION = 'asyncio library for Bosch thermostats'
-URL = 'https://github.com/marconfus/aionefit'
-EMAIL = 'marconfus@gmail.com'
-AUTHOR = 'Marco Reichwald'
+URL = 'https://github.com/spoetnik/aionefit'
+EMAIL = 'm.degeus@nise.nl'
+AUTHOR = 'Martijn de Geus'
 REQUIRES_PYTHON = '>=3.5.0'
-VERSION = "0.14"
+VERSION = "0.15"
 
 # What packages are required for this module to be executed?
 REQUIRED = [
     "pyaes",
-    "slixmpp==1.5.1"
+    "slixmpp==1.8.2"
 ]
 
 # What packages are optional?
