@@ -1,10 +1,18 @@
 import slixmpp
 import asyncio
 import logging
+import ssl
 from slixmpp.xmlstream import tostring
 
 _LOGGER = logging.getLogger(__name__)
 
+# Custom SSL Context to avoid blocking calls. Needs slixmpp >= 1.9.1
+# Created with the same parameters as in slixmpp XMLStream class
+SSL_CONTEXT = ssl.create_default_context()
+SSL_CONTEXT.set_ciphers("DEFAULT")
+SSL_CONTEXT.check_hostname = True
+SSL_CONTEXT.verify_mode = ssl.CERT_REQUIRED
+SSL_CONTEXT.set_default_verify_paths()
 
 class NefitXmppClient(slixmpp.ClientXMPP):
     """XMPP client implementation using the slixmpp library
@@ -13,7 +21,8 @@ class NefitXmppClient(slixmpp.ClientXMPP):
     def __init__(self, jid, password, encryption, nefit_client=None):
 
         slixmpp.ClientXMPP.__init__(self, jid, password,
-                                    sasl_mech="DIGEST-MD5")
+                                    sasl_mech="DIGEST-MD5",
+                                    ssl_context=SSL_CONTEXT)
         self.nefit_client = nefit_client
         # the event signaling, that the connection is established
         self.connected_event = asyncio.Event()

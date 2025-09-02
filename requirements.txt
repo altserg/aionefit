@@ -1,2 +1,2 @@
 pyaes
-slixmpp==1.8.2
+slixmpp
