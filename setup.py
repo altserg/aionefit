@@ -17,13 +17,13 @@ DESCRIPTION = 'asyncio library for Bosch thermostats'
 URL = 'https://github.com/spoetnik/aionefit'
 EMAIL = 'm.degeus@nise.nl'
 AUTHOR = 'Martijn de Geus'
-REQUIRES_PYTHON = '>=3.5.0'
-VERSION = "0.15"
+REQUIRES_PYTHON = '>=3.9.0'
+VERSION = "0.16"
 
 # What packages are required for this module to be executed?
 REQUIRED = [
     "pyaes",
-    "slixmpp==1.8.2"
+    "slixmpp==1.11.0"
 ]
 
 # What packages are optional?
@@ -119,10 +119,9 @@ setup(
     classifiers=[
         # Trove classifiers
         # Full list: https://pypi.python.org/pypi?%3Aaction=list_classifiers
-        'License :: OSI Approved :: MIT License',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: Implementation :: CPython',
         'Programming Language :: Python :: Implementation :: PyPy'
     ],
